@@ -1,0 +1,24 @@
+<launch>
+    
+    <param name="target_yaw" type="double" value="34.8" />
+    <param name="flight_time" type="double" value="90" />
+    
+    <node name="Depth_Analyse_Node" pkg="bebop2" type="image_bebop2_node" output="screen">
+    </node>
+    
+    <node name="Main_Controller_Node" pkg="bebop2" type="main" output="screen">
+        <param name="kp_x" type="double" value="0.30" />
+        <param name="kp_y" type="double" value="0.30" />
+        <param name="kp_z" type="double" value="0.30" />
+        <param name="kp_yaw" type="double" value="0.30" />
+
+        <param name="kd_x" type="double" value="0.05" />
+        <param name="kd_y" type="double" value="0.05" />
+        <param name="kd_z" type="double" value="0.05" />
+        <param name="kd_yaw" type="double" value="0.05" />
+
+        <param name="reached_thresh_xyz" type="double" value="0.1" />
+        <param name="reached_yaw_degrees" type="double" value="5.0" />
+    </node>
+
+</launch>
