@@ -1,14 +1,15 @@
 import cv2
 import os
 
-def mergePics(path,startPic=1):#需要修改endPic
+def mergePics(path):#需要修改endPic
 	#path="/home/sivan7/bebop_mega/效果可以_15_46"
-	lens=len([lists for lists in os.listdir(path) if os.path.isfile(os.path.join(path, lists))])
-	endPic=80
-	#endPic=lens
-	print(path+'/merge')
-	# if not os.path.exists(os.path.join(path,'/merge')):
-	# 	os.makedirs(os.path.join(path,'/merge'))
+	image_path=path+'/image'
+	lens=len([lists for lists in os.listdir(image_path) if os.path.isfile(os.path.join(image_path, lists))])
+	#-------------------------修改起始点-------------------#
+	startPic=1380
+	#endPic=250
+	endPic=lens
+	#----------------------------------------------------#
 	if not os.path.exists(path+'/merge'):
 		os.makedirs(path+'/merge')
 	for i in range(startPic,endPic):
@@ -44,7 +45,8 @@ def getVideo(picPath,outVideo,fps=14):
 
 
 if __name__ == '__main__':
-	mergePics(path = "/home/sivan7/bebop_mega/Apr_21_2021_09_45_08")
-	getVideo(picPath = '/home/sivan7/bebop_mega/Apr_21_2021_09_45_08/merge/',outVideo = "/home/sivan7/bebop_mega/Apr_21_2021_09_45_08/mergeVideo.mp4")
+	path="/home/sivan7/bebop_mega/Apr_22_2021_10_14_56"
+	mergePics(path)
+	getVideo(picPath = path+'/merge/',outVideo = path+"/mergeVideo.mp4")
 	
 
