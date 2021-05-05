@@ -1,0 +1,2 @@
+float64 yaw_command
+bool avoidance_flag

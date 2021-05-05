@@ -1,0 +1,22 @@
+<launch>
+<!-- global params -->
+    <param name="target_gps_latitude" type="double" value="31.0265636667" />
+    <param name="target_gps_longitude" type="double" value="121.4394008333" />
+    <param name="target_gps_altitude" type="double" value="2.2000000477" />
+    
+    <node name="main" pkg="bebop2" type="main" output="screen">
+        <param name="kp_x" type="double" value="0.30" />
+        <param name="kp_y" type="double" value="0.30" />
+        <param name="kp_z" type="double" value="0.30" />
+        <param name="kp_yaw" type="double" value="0.30" />
+
+        <param name="kd_x" type="double" value="0.05" />
+        <param name="kd_y" type="double" value="0.05" />
+        <param name="kd_z" type="double" value="0.05" />
+        <param name="kd_yaw" type="double" value="0.05" />
+
+        <param name="reached_thresh_xyz" type="double" value="0.1" />
+        <param name="reached_yaw_degrees" type="double" value="5.0" />
+    </node>
+    
+</launch>
