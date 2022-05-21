@@ -20,7 +20,7 @@ def on_EVENT_LBUTTONDOWN(event, x, y, flags, param):
         #cv2.putText(img, xy, (x, y), cv2.FONT_HERSHEY_PLAIN,1.0, (0, 0, 0), thickness=1)
         cv2.imshow("image", img)
         print("position is ", x,y)
-        print("grey val is ",255-img[x][y])
+        print("grey val is ",img[y][x])
 cv2.namedWindow("image")
 cv2.setMouseCallback("image", on_EVENT_LBUTTONDOWN)
 cv2.imshow("image", img)
